@@ -1,4 +1,5 @@
 {
+  "kind": "collectionType",
   "connection": "default",
   "collectionName": "articles",
   "info": {
@@ -30,6 +31,22 @@
     "category": {
       "model": "category",
       "via": "articles"
+    },
+    "hot": {
+      "type": "enumeration",
+      "enum": [
+        "hi",
+        "hello"
+      ]
+    },
+    "email": {
+      "type": "email"
+    },
+    "login": {
+      "type": "dynamiczone",
+      "components": [
+        "comm.alert"
+      ]
     }
   }
 }

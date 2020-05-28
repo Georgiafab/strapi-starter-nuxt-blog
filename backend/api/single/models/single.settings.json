@@ -1,0 +1,16 @@
+{
+  "kind": "singleType",
+  "collectionName": "singles",
+  "info": {
+    "name": "single"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "desi": {
+      "type": "richtext"
+    }
+  }
+}

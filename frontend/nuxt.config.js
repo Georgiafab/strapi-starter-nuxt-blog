@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   env: {
-    strapiBaseUri: process.env.API_URL || "http://localhost:1337"
+    strapiBaseUri: process.env.API_URL || "https://strapi-starter-nuxt-blog.herokuapp.com/"
   },
 
   head: {
@@ -29,27 +29,47 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#fff" },
+  loading: { color: "#27a6e6" },
   /*
    ** Global CSS
    */
   css: [
-    "uikit/dist/css/uikit.min.css",
-    "uikit/dist/css/uikit.css",
+    // "uikit/dist/css/uikit.min.css",
+    // "uikit/dist/css/uikit.css",
     "@assets/css/main.css"
   ],
+
+  generate: {
+    //- 为动态路由添加静态化
+    //- 静态化站点的时候动态路由是无法被感知到的
+    //- 所以可以预测性的在这里配置
+    routes: [
+      '/articles/2',
+      '/articles/1',
+      '/categories/1',
+      "/categories/2",
+      // "/index"
+    ],
+    subFolders:false,  //不会为每个路由创建一个目录并生成index.html文件
+    devtools:true
+  },
+  // publicPath:'./',
+  // router: {
+  //   base: './'
+  // },
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: "~/plugins/uikit.js", ssr: false }],
+  // plugins: [{ src: "~/plugins/uikit.js", ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [],
+  globalName:"imyfone",
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/apollo", "@nuxtjs/markdownit"],
+  modules: ["@nuxtjs/apollo", "@nuxtjs/markdownit",'@nuxtjs/axios','@nuxtjs/proxy'],
   markdownit: {
     preset: "default",
     linkify: true,
@@ -60,6 +80,17 @@ export default {
     clientConfigs: {
       default: {
         httpEndpoint: (process.env.API_URL || "http://localhost:1337") + "/graphql"
+      }
+    }
+  },
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api': {
+      target: 'https://elm-api.caibowen.net/',
+      pathRewrite: {
+        '^/api' : '/'
       }
     }
   },

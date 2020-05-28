@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_comm_alerts",
+  "info": {
+    "name": "alert",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "这是一条弹窗信息",
+      "required": true
+    },
+    "desic": {
+      "type": "text"
+    }
+  }
+}

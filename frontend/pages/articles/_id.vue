@@ -22,6 +22,8 @@
         </p>
       </div>
     </div>
+    <p class="hot">{{article.hot}}</p>
+    <p>hot{{article.email}}</p>
   </div>
 </template>
 

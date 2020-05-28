@@ -4,9 +4,8 @@
     <div class="uk-section">
       <div class="uk-container uk-container-large">
         <h1>Strapi blog</h1>
-
+        <el-button>默认按钮</el-button>
         <Articles :articles="articles"></Articles>
-
       </div>
     </div>
 

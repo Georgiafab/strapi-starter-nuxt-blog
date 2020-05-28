@@ -60,7 +60,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  // plugins: [{ src: "~/plugins/uikit.js", ssr: false }],
+  plugins: [{ src: "~/plugins/element.js", ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -79,7 +79,7 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: (process.env.API_URL || "http://localhost:1337") + "/graphql"
+        httpEndpoint: (process.env.API_URL || "https://strapi-starter-nuxt-blog.herokuapp.com") + "/graphql"
       }
     }
   },
@@ -89,7 +89,7 @@ export default {
   proxy: {
     '/api': {
       target: 'https://elm-api.caibowen.net/',
-      pathRewrite: {
+      pathRewrite: {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
         '^/api' : '/'
       }
     }
@@ -113,7 +113,10 @@ export default {
             }
           ]
         ]
-      }
+      },
+      plugins: [
+        [ "component", {"libraryName": "element-ui",  "styleLibraryName": "theme-chalk"}] 
+      ] 
     }
   }
 };

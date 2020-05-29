@@ -6,8 +6,6 @@ Strapi+nuxt创建的博客网站.
 
 You may want to know how to develop such a starter by your own! This starter is actually the result of this [tutorial](https://strapi.io/blog/build-a-blog-using-nuxt-strapi-and-apollo)
 
-![screenshot image](/screenshot.png)
-
 
 ### Getting started
 

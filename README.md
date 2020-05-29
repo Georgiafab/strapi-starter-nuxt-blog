@@ -14,7 +14,7 @@ You may want to know how to develop such a starter by your own! This starter is 
 **Clone the repository and install dependencies**
 
 ```bash
-git clone https://github.com/strapi/strapi-starter-nuxt-blog.git
+git clone https://github.com/Georgiafab/strapi-starter-nuxt-blog.git
 cd strapi-starter-nuxt-blog
 
 # Using yarn

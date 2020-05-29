@@ -83,6 +83,7 @@ export default {
       }
     }
   },
+  //配置代理
   axios: {
     proxy: true
   },

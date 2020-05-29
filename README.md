@@ -2,7 +2,7 @@
 
 Strapi+nuxt创建的博客网站.
 
-这个入门程序允许您以一个简单的博客为例来尝试使用nutt .js的Strapi。它是完全可定制的，而且由于它是开源的，完全开放给贡献。不要犹豫添加新功能等 ...
+它是完全可定制的，而且由于它是开源的，完全开放支持添加新功能等 ...
 
 You may want to know how to develop such a starter by your own! This starter is actually the result of this [tutorial](https://strapi.io/blog/build-a-blog-using-nuxt-strapi-and-apollo)
 

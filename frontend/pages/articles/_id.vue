@@ -1,29 +1,27 @@
 <template>
   <div>
-    <div
+    <el-image
       v-if="article.image"
       id="banner"
-      class="uk-height-small uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding"
-      :data-src="article.image.url"
-      uk-img
+      style="width: 100%; height: 400px"
+      :src="article.image.url"
+      fit="contain"
     >
-      <h1>{{ article.title }}</h1>
-    </div>
+    </el-image>
+    <h1>{{ article.title }}</h1>
 
-    <div class="uk-section">
-      <div class="uk-container uk-container-small">
-        <div
-          v-if="article.content"
-          id="editor"
-          v-html="$md.render(article.content)"
-        ></div>
-        <p v-if="article.published_at">
-          {{ moment(article.published_at).format("MMM Do YY") }}
-        </p>
-      </div>
-    </div>
-    <p class="hot">{{article.hot}}</p>
-    <p>hot{{article.email}}</p>
+    <div
+      v-if="article.content"
+      id="editor"
+      v-html="$md.render(article.content)"
+    ></div>
+
+    <p v-if="article.published_at">
+      {{ moment(article.published_at).format("MMM Do YY") }}
+    </p>
+
+    <p class="hot">{{ article.hot }}</p>
+    <p>hot{{ article.email }}</p>
   </div>
 </template>
 

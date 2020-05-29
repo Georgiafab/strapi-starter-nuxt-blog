@@ -88,7 +88,7 @@ export default {
   },
   proxy: {
     '/api': {
-      target: 'https://elm-api.caibowen.net/',
+      target: 'http://localhost:9000',
       pathRewrite: {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
         '^/api' : '/'
       }

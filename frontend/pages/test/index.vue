@@ -1,7 +1,20 @@
 <template>
   <div class="test">
-   <div> {{ title }}</div>
+
+    <h2>下面是cms管理系统里的数据</h2>
     <div>{{single.desi}}</div>
+
+
+    <h2>下面是请求来的数据</h2>
+    <ul>
+
+      <li v-for="item in list" :key="item.id">
+        <h3>{{item.title}}</h3>
+        <p>{{item.content}}</p>
+        <img :src="item.companyPic" alt="tem.title">
+      </li>
+
+    </ul>
   </div>
 </template>
 
@@ -11,16 +24,16 @@ import singleQuery from "~/apollo/queries/single/single";
 export default {
   data() {
     return {
-      title: {},
+      list: [],
       single:{}
     };
   },
   asyncData() {
-    return axios.get(`https://elm-api.caibowen.net/common/getAddress`)
+    return axios.get(`http://localhost:9000/api/list`)
       .then((res) => {
-        console.log(res.statusText);
+        // console.log(res.data.data);
         // console.log(req);
-        return { title: res.statusText };
+        return { list: res.data.data};
       });
   },
   apollo: {

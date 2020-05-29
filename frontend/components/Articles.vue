@@ -1,57 +1,49 @@
 <template>
   <div>
-    <div class="uk-child-width-1-2" uk-grid>
       <div>
         <router-link
           v-for="article in leftArticles"
           :to="{ name: 'articles-id', params: { id: article.id } }"
-          class="uk-link-reset"
           :key="article.id"
         >
-          <div class="uk-card uk-card-muted">
-            <div class="uk-card-media-top">
-              <img :src=" article.image.url" alt="" height="100" />
+          <div>
+            <div >
+              <img :src="article.image.url" alt="" height="100" />
             </div>
-            <div class="uk-card-body">
+            <div >
               <p
                 id="category"
                 v-if="article.category"
-                class="uk-text-uppercase"
               >
                 {{ article.category.name }}
               </p>
-              <p id="title" class="uk-text-large">{{ article.title }}</p>
+              <p id="title" >{{ article.title }}</p>
             </div>
           </div>
         </router-link>
       </div>
       <div>
-        <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
           <router-link
             v-for="article in rightArticles"
             :to="{ name: 'articles-id', params: { id: article.id } }"
-            class="uk-link-reset"
             :key="article.id"
           >
-            <div class="uk-card uk-card-muted">
-              <div class="uk-card-media-top">
+            <div >
+              <div >
                 <img :src=" article.image.url" alt="" height="100" />
               </div>
-              <div class="uk-card-body">
+              <div >
                 <p
                   id="category"
                   v-if="article.category"
-                  class="uk-text-uppercase"
                 >
                   {{ article.category.name }}
                 </p>
-                <p id="title" class="uk-text-large">{{ article.title }}</p>
+                <p id="title" >{{ article.title }}</p>
               </div>
             </div>
           </router-link>
-        </div>
       </div>
-    </div>
   </div>
 </template>
 

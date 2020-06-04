@@ -320,12 +320,18 @@
           },
           "desi": {
             "type": "string"
+          },
+          "title": {
+            "type": "string"
           }
         }
       },
       "NewSingle": {
         "properties": {
           "desi": {
+            "type": "string"
+          },
+          "title": {
             "type": "string"
           }
         }

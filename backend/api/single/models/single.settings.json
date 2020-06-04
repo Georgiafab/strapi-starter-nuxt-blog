@@ -11,6 +11,9 @@
   "attributes": {
     "desi": {
       "type": "richtext"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

@@ -1,11 +1,13 @@
-query Articles($id: ID!) {
-  article(id: $id) {
+query Articles($name:name!) {
+  article(name: $name) {
     id
     title
+    name
     content
     image {
       url
     }
-    published_at
+    published_at,
+    email
   }
 }

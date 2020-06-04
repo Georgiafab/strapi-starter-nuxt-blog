@@ -8,7 +8,7 @@ import "./editor.css";
 
 const Wrapper = styled.div`
   .ck-editor__main {
-    min-height: 00px;
+    min-height: 400px;
     > div {
       min-height: 400px;
     }
@@ -45,7 +45,7 @@ const Editor = ({ onChange, name, value }) => {
     <Wrapper>
 
         {/* <div style={showHtml ? "width:50%" : "width:100%"}> */}
-          <button onClick={showHtmlFun}></button>
+          {/* <button onClick={showHtmlFun}></button> */}
           <CKEditor
             onInit={(editor) => {
               // console.log("Editor is ready to use!", editor);

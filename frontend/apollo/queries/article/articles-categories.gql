@@ -12,6 +12,7 @@ query Category($id: ID!){
         id
         name
       }
+      email
     }
   }
 }

@@ -1,14 +1,8 @@
 <template>
   <div>
-
-    <div>
-      <div >
         <h1>测试网站</h1>
         <el-button>默认按钮</el-button>
         <Articles :articles="articles"></Articles>
-      </div>
-    </div>
-
   </div>
 </template>
 
@@ -30,7 +24,7 @@ export default {
       prefetch: true,
       query: articlesQuery,
       variables () {
-        return { id: parseInt(this.$route.params.id) }
+        return { name: parseInt(this.$route.params.id) }
       }
     }
   }

@@ -3,11 +3,13 @@ query Articles {
     id
     title
     content
+    name
     image {
       url
     }
     category{
       name
     }
+    email
   }
 }

@@ -29,10 +29,8 @@ export default {
     };
   },
   asyncData() {
-    return axios.get(`http://localhost:9000/api/list`)
+    return axios.get(`http://www.tenk.top:9000/api/list`)
       .then((res) => {
-        // console.log(res.data.data);
-        // console.log(req);
         return { list: res.data.data};
       });
   },

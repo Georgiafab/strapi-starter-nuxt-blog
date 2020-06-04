@@ -5,6 +5,7 @@ export default {
    */
   env: {
     strapiBaseUri: process.env.API_URL || "https://strapi-starter-nuxt-blog.herokuapp.com/"
+    // strapiBaseUri: process.env.API_URL || "http://localhost:1337/admin/"
   },
 
   head: {
@@ -80,6 +81,7 @@ export default {
     clientConfigs: {
       default: {
         httpEndpoint: (process.env.API_URL || "https://strapi-starter-nuxt-blog.herokuapp.com") + "/graphql"
+        // httpEndpoint: (process.env.API_URL || "http://localhost:1337") + "/graphql"
       }
     }
   },

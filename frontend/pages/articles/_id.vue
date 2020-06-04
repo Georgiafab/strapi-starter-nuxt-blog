@@ -1,14 +1,7 @@
 <template>
   <div>
-    <el-image
-      v-if="article.image"
-      id="banner"
-      style="width: 100%; height: 400px"
-      :src="article.image.url"
-      fit="contain"
-    >
-    </el-image>
-    <h1>{{ article.title }}</h1>
+    <img :src="article.image.url"  v-if="article.image" style="max-width:100%">
+    <h2>{{ article.title }}</h2>
 
     <div
       v-if="article.content"
@@ -21,7 +14,7 @@
     </p>
 
     <p class="hot">{{ article.hot }}</p>
-    <p>hot{{ article.email }}</p>
+    <p>hot:{{ article.email }}</p>
   </div>
 </template>
 
@@ -42,7 +35,7 @@ export default {
       prefetch: true,
       query: articleQuery,
       variables() {
-        return { id: parseInt(this.$route.params.id) };
+        return { name: parseInt(this.$route.params.id) };
       }
     }
   }

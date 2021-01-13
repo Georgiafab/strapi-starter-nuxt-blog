@@ -1,16 +1,17 @@
 <template>
   <div>
-    <img :src="article.image.url"  v-if="article.image" style="max-width:100%">
+    <img :src="api_url+article.image.url"  v-if="article.image" style="max-width:100%">
     <h2>{{ article.title }}</h2>
 
     <div
       v-if="article.content"
       id="editor"
-      v-html="$md.render(article.content)"
+     v-html="article.content"
     ></div>
+     <!-- v-html="$md.render(article.content)" -->
 
     <p v-if="article.published_at">
-      {{ moment(article.published_at).format("MMM Do YY") }}
+      {{ moment(article.published_at).startOf('day').fromNow() }}
     </p>
 
     <p class="hot">{{ article.hot }}</p>
@@ -35,9 +36,12 @@ export default {
       prefetch: true,
       query: articleQuery,
       variables() {
-        return { name: parseInt(this.$route.params.id) };
+        return { id: parseInt(this.$route.params.id) };
       }
     }
+  },
+  created(){
+    console.log(this.$route.params);
   }
 };
 </script>

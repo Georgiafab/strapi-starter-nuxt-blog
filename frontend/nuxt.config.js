@@ -1,11 +1,13 @@
+const axios=require("axios");
+
 export default {
   mode: "universal",
   /*
    ** Headers of the page
    */
   env: {
-    strapiBaseUri: process.env.API_URL || "https://strapi-starter-nuxt-blog.herokuapp.com/"
-    // strapiBaseUri: process.env.API_URL || "http://localhost:1337/admin/"
+    // strapiBaseUri: process.env.API_URL || "https://strapi-starter-nuxt-blog.herokuapp.com/"
+    strapiBaseUri: process.env.API_URL || "http://localhost:1337"
   },
 
   head: {
@@ -44,13 +46,15 @@ export default {
     //- 为动态路由添加静态化
     //- 静态化站点的时候动态路由是无法被感知到的
     //- 所以可以预测性的在这里配置
-    routes: [
-      '/articles/2',
-      '/articles/1',
-      '/categories/1',
-      "/categories/2",
-      // "/index"
-    ],
+    routes () {
+      return axios.get('http://localhost:1337/graphql')
+        .then((res) => {
+          console.log(res)
+          return res.data.map((user) => {
+            return '/users/' + user.id
+          })
+        })
+    },
     subFolders:false,  //不会为每个路由创建一个目录并生成index.html文件
     devtools:true
   },
@@ -80,8 +84,8 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: (process.env.API_URL || "https://strapi-starter-nuxt-blog.herokuapp.com") + "/graphql"
-        // httpEndpoint: (process.env.API_URL || "http://localhost:1337") + "/graphql"
+        // httpEndpoint: (process.env.API_URL || "https://strapi-starter-nuxt-blog.herokuapp.com") + "/graphql"
+        httpEndpoint: (process.env.API_URL || "http://localhost:1337") + "/graphql"
       }
     }
   },

@@ -2,8 +2,8 @@ query Articles {
   articles {
     id
     title
-    content
     name
+    content
     image {
       url
     }

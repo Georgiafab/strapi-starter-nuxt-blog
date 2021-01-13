@@ -2,12 +2,12 @@
   <div>
     <router-link
       v-for="article in articles"
-      :to="{ name: 'articles-name', params: { id: article.name } }"
+      :to="{ name: 'articles-name', params: { name: article.name, id :article.id } }"
       :key="article.id"
     >
       <div>
         <div>
-          <img :src="article.image.url" alt="" height="100" />
+          <img :src="api_url+article.image.url" alt="" height="100" />
         </div>
         <div>
           <p id="category" v-if="article.category">

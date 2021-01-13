@@ -1,5 +1,5 @@
-query Articles($name:name!) {
-  article(name: $name) {
+query Articles($id:ID!) {
+  article(id: $id) {
     id
     title
     name
@@ -8,6 +8,7 @@ query Articles($name:name!) {
       url
     }
     published_at,
-    email
+    email,
+    hot
   }
 }

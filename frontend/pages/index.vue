@@ -9,6 +9,7 @@
 <script>
 import articlesQuery from '~/apollo/queries/article/articles'
 import Articles from '~/components/Articles'
+import axios from "axios";
 
 export default {
   data() {
@@ -24,9 +25,14 @@ export default {
       prefetch: true,
       query: articlesQuery,
       variables () {
-        return { name: parseInt(this.$route.params.id) }
+        return { id: parseInt(this.$route.params.id) }
       }
     }
+  },
+  created(){
+    axios.get('http://localhost:1337/articles').then(res=>{
+      console.log(res);
+    })
   }
 }
 </script>
